@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/register")
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class RegisterController {
 
     @Autowired
@@ -22,6 +23,9 @@ public class RegisterController {
             return ResponseEntity.status(HttpStatus.CREATED).body(registeredUser);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace(); // 打印详细错误信息到控制台
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("注册过程中发生错误：" + e.getMessage());
         }
     }
 

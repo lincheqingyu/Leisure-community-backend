@@ -22,8 +22,8 @@
     <!-- 映射器配置 -->
     <mappers>
         <!-- 指定 XML 映射文件的位置 -->
-        <mapper resource="mapper/UserMapper.xml"/>
-        <mapper resource="mapper/TestMapper.xml"/>
+        <!-- <mapper resource="mapper/UserMapper.xml"/> -->
+        <!-- <mapper resource="mapper/TestMapper.xml"/> -->
         <!-- 如果有多个 XML 映射文件，可以继续在这里添加 -->
     </mappers>
 </configuration>
